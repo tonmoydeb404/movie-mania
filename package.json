@@ -1,0 +1,40 @@
+{
+    "name": "movie-mania",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "lint": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.4.1",
+        "@emotion/styled": "^11.3.0",
+        "@mui/icons-material": "^5.0.4",
+        "@mui/material": "^5.0.3",
+        "axios": "^0.23.0",
+        "lodash": "^4.17.21",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0",
+        "react-infinite-scroll-component": "^6.1.0",
+        "react-player": "^2.9.0",
+        "react-router-dom": "^5.3.0",
+        "styled-components": "^5.3.1"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^1.0.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.2.0",
+        "eslint-config-airbnb": "18.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^1.7.0",
+        "prettier": "^2.4.1",
+        "vite": "^2.6.4"
+    }
+}
