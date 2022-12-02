@@ -9,7 +9,7 @@ const reducer = (reducerState, action) => {
     switch (action.type) {
         case 'INIT_STATE': {
             const newState = lodash.cloneDeep(action.value);
-            return [...reducerState, ...newState];
+            return [...newState];
         }
 
         case 'CLEAR_STATE':
@@ -28,6 +28,11 @@ const CastList = ({ id }) => {
             type: 'INIT_STATE',
             value: cast,
         });
+        
+        // cleanup
+        return () => {
+            dispatch({ type: 'CLEAR_STATE' })
+        }
     }, [cast]);
 
     return (
