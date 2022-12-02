@@ -9,7 +9,7 @@ const reducer = (reducerState, action) => {
     switch (action.type) {
         case 'INIT_STATE': {
             const newState = lodash.cloneDeep(action.value);
-            const newReducerState = [...reducerState, ...newState];
+            const newReducerState = [...newState];
             const updatedState = lodash.uniqBy(newReducerState, 'id');
             return updatedState;
         }
@@ -32,6 +32,11 @@ const SimilarList = ({ infinity = false, pageIndex = 1, name = 'movie', loader =
             type: 'INIT_STATE',
             value: similar,
         });
+        
+        // cleanup
+        return () => {
+            dispatch({ type: 'CLEAR_STATE' })
+        }
     }, [similar]);
 
     useEffect(() => {
