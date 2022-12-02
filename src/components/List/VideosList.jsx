@@ -9,7 +9,7 @@ const reducer = (reducerState, action) => {
     switch (action.type) {
         case 'INIT_STATE': {
             const newState = lodash.cloneDeep(action.value);
-            const newReducerState = [...reducerState, ...newState];
+            const newReducerState = [...newState];
             const updatedState = lodash.uniqBy(newReducerState, 'id');
             return updatedState;
         }
@@ -31,6 +31,12 @@ const VideosList = ({ id, name = 'movie' }) => {
             type: 'INIT_STATE',
             value: videos,
         });
+        
+        return () => {
+            dispatch({
+                type: 'CLEAR_STATE',
+            });
+        }
     }, [videos]);
 
     useEffect(() => {
